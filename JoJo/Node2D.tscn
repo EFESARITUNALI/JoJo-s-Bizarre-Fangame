@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://SF Fedora.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://il vento d'oro.wav" type="AudioStream" id=3]
+[ext_resource path="res://pngfuel.com.png" type="Texture" id=4]
+[ext_resource path="res://5bZbbC9.png" type="Texture" id=5]
+[ext_resource path="res://pngguru.com.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://SF Fedora.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 65
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 67
+font_data = ExtResource( 2 )
+
+[node name="everything" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="menu" type="Node2D" parent="."]
+
+[node name="Label3" type="Label" parent="menu"]
+margin_left = 766.602
+margin_top = 183.5
+margin_right = 968.602
+margin_bottom = 225.5
+custom_fonts/font = SubResource( 2 )
+text = "gaiden"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="menu"]
+margin_left = 519.002
+margin_top = 183.5
+margin_right = 559.002
+margin_bottom = 225.5
+custom_fonts/font = SubResource( 2 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5bZbbC9" type="Sprite" parent="menu"]
+show_behind_parent = true
+position = Vector2( 511.709, 304.252 )
+scale = Vector2( 0.768271, 0.870463 )
+texture = ExtResource( 5 )
+
+[node name="pnggurucom" type="Sprite" parent="menu"]
+position = Vector2( 668.798, 197.484 )
+scale = Vector2( 0.0583607, 0.0479386 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="menu"]
+margin_left = 33.3044
+margin_top = 18.8228
+margin_right = 783.304
+margin_bottom = 147.823
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "
+Nihilist Pilgrim"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="menu"]
+margin_left = 309.136
+margin_top = 301.551
+margin_right = 715.136
+margin_bottom = 501.551
+custom_fonts/font = SubResource( 4 )
+text = "Play Game "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pausemenu" type="Node2D" parent="."]
+
+[node name="Label3" type="Label" parent="pausemenu"]
+margin_left = 766.602
+margin_top = 183.5
+margin_right = 968.602
+margin_bottom = 225.5
+custom_fonts/font = SubResource( 2 )
+text = "gaiden"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="pausemenu"]
+margin_left = 519.002
+margin_top = 183.5
+margin_right = 559.002
+margin_bottom = 225.5
+custom_fonts/font = SubResource( 2 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pnggurucom" type="Sprite" parent="pausemenu"]
+position = Vector2( 668.798, 197.484 )
+scale = Vector2( 0.0583607, 0.0479386 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="pausemenu"]
+margin_left = 33.3044
+margin_top = 18.8228
+margin_right = 783.304
+margin_bottom = 147.823
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "
+Nihilist Pilgrim"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="Button" parent="pausemenu"]
+margin_left = 309.136
+margin_top = 301.551
+margin_right = 715.136
+margin_bottom = 501.551
+custom_fonts/font = SubResource( 4 )
+text = "Resume "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 907.073
+margin_top = 489.029
+margin_right = 992.073
+margin_bottom = 574.029
+icon = ExtResource( 4 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="hide" from="menu" to="." method="_on_menu_hide"]
+[connection signal="pressed" from="menu/Button" to="." method="_on_Button_pressed"]
+[connection signal="hide" from="pausemenu" to="." method="_on_menu_hide"]
+[connection signal="pressed" from="pausemenu/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
