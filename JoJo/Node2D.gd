@@ -6,6 +6,8 @@ var gamestarted=0
 func _ready():
 	get_node("pausemenu").set("focus/ignore_mouse", true)
 	get_node("pausemenu").hide()
+	get_node("game").set("focus/ignore_mouse", true)
+	get_node("game").hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -18,6 +20,8 @@ func _on_Button_pressed():
 	get_node("menu").set("focus/ignore_mouse", true)
 	get_node("menu").hide()
 	gamestarted=1
+	get_node("game").set("focus/ignore_mouse", false)
+	get_node("game").show()
 
 
 func _on_Button2_pressed():

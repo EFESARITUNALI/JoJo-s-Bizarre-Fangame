@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://SF Fedora.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://pngfuel.com.png" type="Texture" id=4]
 [ext_resource path="res://5bZbbC9.png" type="Texture" id=5]
 [ext_resource path="res://pngguru.com.png" type="Texture" id=6]
+[ext_resource path="res://tumblr_on116nTDwy1s1odqho1_1280.png" type="Texture" id=7]
+[ext_resource path="res://Arcade - JoJos Bizarre Adventure - Jotaro (1).png" type="Texture" id=8]
+[ext_resource path="res://Jotaro.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://SF Fedora.ttf"
@@ -137,9 +140,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
-autoplay = true
+[node name="game" type="Node2D" parent="."]
+z_index = -1
+
+[node name="tumblr_on116nTDwy1s1odqho1_1280" type="Sprite" parent="game"]
+show_behind_parent = true
+position = Vector2( 511.479, 276.946 )
+scale = Vector2( 0.814291, 0.699796 )
+texture = ExtResource( 7 )
+
+[node name="Jotaro" type="Sprite" parent="game"]
+position = Vector2( 736.206, 362.677 )
+scale = Vector2( 3.58541, 4.08106 )
+texture = ExtResource( 8 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 20, 300, 136 )
+script = ExtResource( 9 )
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 907.073
@@ -151,6 +168,11 @@ expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -6.10352e-05, -3.05176e-05 )
+stream = ExtResource( 3 )
+autoplay = true
 [connection signal="hide" from="menu" to="." method="_on_menu_hide"]
 [connection signal="pressed" from="menu/Button" to="." method="_on_Button_pressed"]
 [connection signal="hide" from="pausemenu" to="." method="_on_menu_hide"]
