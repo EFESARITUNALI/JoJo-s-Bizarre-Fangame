@@ -7,7 +7,7 @@
 [ext_resource path="res://5bZbbC9.png" type="Texture" id=5]
 [ext_resource path="res://pngguru.com.png" type="Texture" id=6]
 [ext_resource path="res://tumblr_on116nTDwy1s1odqho1_1280.png" type="Texture" id=7]
-[ext_resource path="res://Arcade - JoJos Bizarre Adventure - Jotaro (1).png" type="Texture" id=8]
+[ext_resource path="res://Mediamodifier-Design-Template (1).png" type="Texture" id=8]
 [ext_resource path="res://Jotaro.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -150,12 +150,13 @@ scale = Vector2( 0.814291, 0.699796 )
 texture = ExtResource( 7 )
 
 [node name="Jotaro" type="Sprite" parent="game"]
-position = Vector2( 736.206, 362.677 )
-scale = Vector2( 3.58541, 4.08106 )
+position = Vector2( 692.717, 312.71 )
+scale = Vector2( 3.12773, 3.78496 )
 texture = ExtResource( 8 )
 hframes = 4
+frame = 3
 region_enabled = true
-region_rect = Rect2( 0, 20, 300, 136 )
+region_rect = Rect2( 0, 30, 375, 150 )
 script = ExtResource( 9 )
 
 [node name="Button2" type="Button" parent="."]
