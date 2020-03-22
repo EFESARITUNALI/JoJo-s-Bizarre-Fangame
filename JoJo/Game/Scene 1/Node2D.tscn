@@ -226,7 +226,7 @@ position = Vector2( 742.544, 342.63 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 5 )
 animation = "Jotaro Idle"
-frame = 7
+frame = 6
 playing = true
 
 [node name="Jotaro Walking" type="AnimatedSprite" parent="game"]
@@ -234,6 +234,7 @@ position = Vector2( 1190.04, 333.53 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 5 )
 animation = "Jotaro Walking"
+frame = 4
 playing = true
 
 [node name="Usagi Walking" type="AnimatedSprite" parent="game"]
@@ -241,6 +242,7 @@ position = Vector2( -196.116, 371.903 )
 scale = Vector2( 3.59963, 4.1482 )
 frames = SubResource( 6 )
 animation = "Usagi Walking"
+frame = 4
 speed_scale = 1.5
 playing = true
 
@@ -294,10 +296,10 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 907.073
-margin_top = 489.029
-margin_right = 992.073
-margin_bottom = 574.029
+margin_left = 900.0
+margin_top = 500.0
+margin_right = 990.0
+margin_bottom = 590.0
 icon = ExtResource( 2 )
 expand_icon = true
 __meta__ = {
