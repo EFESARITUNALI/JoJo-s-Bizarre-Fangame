@@ -71,7 +71,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 39 ) ],
 "loop": true,
@@ -79,7 +79,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
 "loop": false,
@@ -87,11 +87,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 45
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 47
 font_data = ExtResource( 2 )
 
@@ -226,7 +226,7 @@ position = Vector2( 742.544, 342.63 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 5 )
 animation = "Jotaro Idle"
-frame = 10
+frame = 4
 playing = true
 
 [node name="Jotaro Walking" type="AnimatedSprite" parent="game"]
@@ -234,15 +234,14 @@ position = Vector2( 1190.04, 333.53 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 5 )
 animation = "Jotaro Walking"
-frame = 5
+frame = 6
 playing = true
 
 [node name="Usagi Walking" type="AnimatedSprite" parent="game"]
 position = Vector2( -196.116, 371.903 )
 scale = Vector2( 3.59963, 4.1482 )
-frames = SubResource( 8 )
+frames = SubResource( 6 )
 animation = "Usagi Walking"
-frame = 9
 speed_scale = 1.5
 playing = true
 
@@ -250,7 +249,7 @@ playing = true
 visible = false
 position = Vector2( 231.991, 383.861 )
 scale = Vector2( 3.59963, 3.65021 )
-frames = SubResource( 9 )
+frames = SubResource( 7 )
 animation = "Usagi Idle"
 speed_scale = 0.5
 
@@ -277,7 +276,7 @@ margin_left = 21.0
 margin_top = 512.0
 margin_right = 902.0
 margin_bottom = 604.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -287,7 +286,7 @@ margin_left = 15.1094
 margin_top = 41.0109
 margin_right = 475.109
 margin_bottom = 137.011
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Azabu-Juban, Tokyo
 
 1992"

@@ -17,6 +17,7 @@ func _process(delta):
 		get_node("pausemenu").show()
 		get_node("game").set("focus/ignore_mouse", true)
 		set_pause_node(get_node("game"),1)
+		get_node("game/yazi").hide()
 
 func set_pause_node(node : Node, pause : bool) -> void:
 	node.set_process(!pause)
@@ -42,3 +43,5 @@ func _on_PauseButton_pressed():
 	get_node("pausemenu").set("focus/ignore_mouse", true)
 	get_node("pausemenu").hide()
 	set_pause_node(get_node("game"),0)
+	if(get_node("game").yazi):
+		get_node("game/yazi").show()

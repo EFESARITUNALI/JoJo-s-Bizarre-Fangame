@@ -1,5 +1,6 @@
 extends Node2D
 
+var yazi=1
 onready var subtitle = get_node("subtitle")
 onready var Jotaro_Walking=get_node("Jotaro Walking")
 onready var Jotaro_Idle=get_node("Jotaro Idle")
@@ -48,6 +49,7 @@ func dialogue(label: Label, text: String) -> void:
 func _ready():
 	yield(self,"mouse_click")
 	get_node("yazi").hide()
+	yazi=0
 	dialogue(subtitle, "They said I will meet a local hero here.")
 	subtitle.show()
 	yield(self,"mouse_click")
