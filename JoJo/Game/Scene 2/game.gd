@@ -80,7 +80,7 @@ func _process(delta):
 	timelabel.text = str(10 - timer)
 	timelabel.show()
 	var sum = punch_count + kick_count*2
-	if(sum >= 25):
+	if(sum >= 35):
 		dialogue(sublime,"You beat me !!")
 		Jotaro_Falls.position=$JotaroPosition/JotaroFall.position
 		Jotaro_Idle.position=$JotaroPosition/JotaroIdle.position
@@ -91,13 +91,14 @@ func _process(delta):
 		tween.interpolate_property(Jotaro_Falls,"position",Jotaro_Idle.position,Jotaro_Falls.position,1,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
 		yield(tween,"tween_completed")
+		wait(1.5)
 		get_tree().change_scene("res://Game/Scene 3/Ending.tscn")
 		
 		
 	if(timer >= 10):
 		timer = 0
-		if(sum <= 25):
-			dialogue(sublime,"You Hit Like a girl, I'll give you time")
+		if(sum <= 35):
+			dialogue(sublime,"You hit like a girl, I'll give you another chance...")
 			
 		
 	

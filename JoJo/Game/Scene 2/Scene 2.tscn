@@ -254,7 +254,7 @@ scale = Vector2( 4.40633, 4.49821 )
 z_index = -1
 frames = SubResource( 8 )
 animation = "Jotaro Idle"
-frame = 8
+frame = 3
 playing = true
 
 [node name="Usagi Idle" type="AnimatedSprite" parent="game"]
@@ -269,7 +269,7 @@ position = Vector2( 1701.85, 319.18 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 8 )
 animation = "Jotaro Walking"
-frame = 7
+frame = 6
 playing = true
 
 [node name="Usagi Walking" type="AnimatedSprite" parent="game"]
@@ -277,7 +277,7 @@ position = Vector2( -110.017, 395.82 )
 scale = Vector2( 3.59963, 4.1482 )
 frames = SubResource( 10 )
 animation = "Usagi Walking"
-frame = 10
+frame = 3
 speed_scale = 1.5
 playing = true
 
@@ -326,12 +326,14 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="game"]
 
 [node name="Label" type="Label" parent="game"]
-margin_left = 846.897
-margin_top = 114.362
-margin_right = 1256.9
-margin_bottom = 146.362
+margin_left = 787.938
+margin_top = 113.576
+margin_right = 1197.94
+margin_bottom = 158.576
 custom_fonts/font = SubResource( 13 )
-text = "Shake The Mause"
+text = "SHAKE THE MOUSE
+
+FROM LEFT TO RIGHT!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
