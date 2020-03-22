@@ -227,6 +227,7 @@ position = Vector2( 742.544, 342.63 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 5 )
 animation = "Jotaro Idle"
+frame = 2
 playing = true
 
 [node name="Jotaro Walking" type="AnimatedSprite" parent="game"]
@@ -234,6 +235,7 @@ position = Vector2( 1190.04, 333.53 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 5 )
 animation = "Jotaro Walking"
+frame = 6
 playing = true
 
 [node name="Usagi Walking" type="AnimatedSprite" parent="game"]
@@ -241,7 +243,7 @@ position = Vector2( -196.116, 371.903 )
 scale = Vector2( 3.59963, 4.1482 )
 frames = SubResource( 6 )
 animation = "Usagi Walking"
-frame = 2
+frame = 10
 speed_scale = 1.5
 playing = true
 
