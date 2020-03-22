@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SF Fedora.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://sailor.jpg" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+outline_size = 100
+outline_color = Color( 0.584314, 0.498039, 0.552941, 0.313726 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 20
+outline_color = Color( 0.819608, 0.607843, 0.760784, 0.176471 )
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="sailor" type="Sprite" parent="."]
+position = Vector2( 505.158, 319.156 )
+scale = Vector2( 1.00603, 0.884287 )
+texture = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 60.1891
+margin_top = 364.268
+margin_right = 885.189
+margin_bottom = 490.268
+custom_fonts/font = SubResource( 1 )
+text = "You Win!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 295.279
+margin_top = 512.636
+margin_right = 702.279
+margin_bottom = 544.636
+custom_fonts/font = SubResource( 2 )
+text = "Congratulations"
+__meta__ = {
+"_edit_use_anchors_": false
+}
