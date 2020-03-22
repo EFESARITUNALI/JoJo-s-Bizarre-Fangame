@@ -11,6 +11,8 @@ func set_pause_node(node : Node, pause : bool) -> void:
 
 func _ready():
 	pass # Replace with function body.
+	
+
 
 func _process(delta):
 	#P to pause
@@ -19,6 +21,8 @@ func _process(delta):
 		get_node("pausemenu").show()
 		get_node("game").set("focus/ignore_mouse", true)
 		set_pause_node(get_node("game"),1)
+		
+	
 
 	#audio Play/stop
 func _on_Button_pressed():
@@ -29,3 +33,7 @@ func _on_PauseButton_pressed():
 	get_node("pausemenu").set("focus/ignore_mouse", true)
 	get_node("pausemenu").hide()
 	set_pause_node(get_node("game"),0)
+
+
+
+

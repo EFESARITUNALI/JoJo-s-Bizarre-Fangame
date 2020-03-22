@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Other_Sprites/pngfuel.com.png" type="Texture" id=1]
 [ext_resource path="res://Game/Scene 2/Scene 2.gd" type="Script" id=2]
@@ -38,7 +38,6 @@
 [ext_resource path="res://Jotaro Walking/5.png" type="Texture" id=36]
 [ext_resource path="res://Jotaro Idle/13.png" type="Texture" id=37]
 [ext_resource path="res://Usagi Walking/2.png" type="Texture" id=38]
-[ext_resource path="res://Usagi Idle/0.png" type="Texture" id=39]
 [ext_resource path="res://Usagi Walking/1.png" type="Texture" id=40]
 [ext_resource path="res://Jotaro Walking/2.png" type="Texture" id=41]
 [ext_resource path="res://Jotaro Walking/6.png" type="Texture" id=42]
@@ -48,7 +47,6 @@
 [ext_resource path="res://Jotaro Idle/6.png" type="Texture" id=46]
 [ext_resource path="res://Usagi Walking/9.png" type="Texture" id=47]
 [ext_resource path="res://Jotaro Walking/4.png" type="Texture" id=48]
-[ext_resource path="res://Usagi Idle/1.png" type="Texture" id=49]
 [ext_resource path="res://Usagi Walking/8.png" type="Texture" id=50]
 [ext_resource path="res://Jotaro Walking/3.png" type="Texture" id=51]
 [ext_resource path="res://Usagi Walking/3.png" type="Texture" id=52]
@@ -62,6 +60,9 @@
 [ext_resource path="res://Jotaro Walking/7.png" type="Texture" id=60]
 [ext_resource path="res://Jotaro Walking/1.png" type="Texture" id=61]
 [ext_resource path="res://Jotaro Idle/11.png" type="Texture" id=62]
+[ext_resource path="res://Game/Scene 2/MouseFrequencyDetector.tscn" type="PackedScene" id=63]
+[ext_resource path="res://Back_Ground/tumblr_on116nTDwy1s1odqho1_1280.png" type="Texture" id=64]
+[ext_resource path="res://Game/Scene 2/game.gd" type="Script" id=65]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://SF Fedora.ttf"
@@ -81,7 +82,7 @@ font_data = ExtResource( 4 )
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 15 ) ],
-"loop": true,
+"loop": false,
 "name": "Usagi Kick",
 "speed": 5.0
 } ]
@@ -89,7 +90,7 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 8 ) ],
-"loop": true,
+"loop": false,
 "name": "Usagi Punch",
 "speed": 5.0
 } ]
@@ -97,27 +98,27 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 24 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 27 ) ],
-"loop": true,
+"loop": false,
 "name": "Jotaro Falls",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 29 ), ExtResource( 45 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 46 ), ExtResource( 57 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 37 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "Jotaro Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 61 ), ExtResource( 41 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 60 ), ExtResource( 54 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "Jotaro Walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 45 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 46 ), ExtResource( 57 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "Jotaro Idle",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 39 ), ExtResource( 49 ), ExtResource( 55 ) ],
+"frames": [ ExtResource( 55 ) ],
 "loop": false,
 "name": "Usagi Idle",
 "speed": 5.0
@@ -130,6 +131,14 @@ animations = [ {
 "name": "Usagi Walking",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 4 )
 
 [node name="everything" type="Node2D"]
 script = ExtResource( 2 )
@@ -193,10 +202,10 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="Button" type="Button" parent="."]
-margin_left = 900.0
-margin_top = 500.0
-margin_right = 990.0
-margin_bottom = 590.0
+margin_left = 920.0
+margin_top = 15.0
+margin_right = 1010.0
+margin_bottom = 95.0
 action_mode = 0
 icon = ExtResource( 1 )
 expand_icon = true
@@ -205,39 +214,47 @@ __meta__ = {
 }
 
 [node name="game" type="Node2D" parent="."]
+script = ExtResource( 65 )
+
+[node name="tumblr_on116nTDwy1s1odqho1_1280" type="Sprite" parent="game"]
+show_behind_parent = true
+position = Vector2( 511.479, 298.531 )
+scale = Vector2( 0.814291, 0.654545 )
+z_index = -2
+texture = ExtResource( 64 )
 
 [node name="Usagi Kick" type="AnimatedSprite" parent="game"]
-position = Vector2( 458.811, 417.116 )
+position = Vector2( -557.641, 433.858 )
 scale = Vector2( 4.15793, 3.55578 )
 frames = SubResource( 5 )
 animation = "Usagi Kick"
-frame = 1
 speed_scale = 1.2
 
 [node name="Usagi Punch" type="AnimatedSprite" parent="game"]
-position = Vector2( 756.166, 395.75 )
+position = Vector2( -800.8, 422.058 )
 scale = Vector2( 3.61132, 4.08984 )
 frames = SubResource( 6 )
 animation = "Usagi Punch"
-frame = 1
+speed_scale = 2.3
 
 [node name="Jotaro Falls" type="AnimatedSprite" parent="game"]
 position = Vector2( 2261.66, 459.367 )
 scale = Vector2( 4.75004, 3.84549 )
+z_index = -1
 frames = SubResource( 7 )
 animation = "Jotaro Falls"
-frame = 4
 
 [node name="Jotaro Idle" type="AnimatedSprite" parent="game"]
-position = Vector2( 1318.34, 335.455 )
+position = Vector2( 1301.6, 335.455 )
 scale = Vector2( 4.40633, 4.49821 )
+z_index = -1
 frames = SubResource( 8 )
 animation = "Jotaro Idle"
-frame = 1
+frame = 8
 playing = true
 
 [node name="Usagi Idle" type="AnimatedSprite" parent="game"]
-position = Vector2( 243.949, 400.603 )
+position = Vector2( -327.656, 410.17 )
 scale = Vector2( 4.14319, 3.93721 )
 frames = SubResource( 9 )
 animation = "Usagi Idle"
@@ -248,16 +265,61 @@ position = Vector2( 1701.85, 319.18 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 8 )
 animation = "Jotaro Walking"
-frame = 5
+frame = 8
 playing = true
 
 [node name="Usagi Walking" type="AnimatedSprite" parent="game"]
-position = Vector2( 71.7488, 388.645 )
+position = Vector2( -110.017, 395.82 )
 scale = Vector2( 3.59963, 4.1482 )
 frames = SubResource( 10 )
 animation = "Usagi Walking"
 frame = 3
 speed_scale = 1.5
 playing = true
+
+[node name="JotaroPosition" type="Node2D" parent="game"]
+
+[node name="JotaroIdle" type="Position2D" parent="game/JotaroPosition"]
+position = Vector2( 380.011, 347.965 )
+
+[node name="JotaroFall" type="Position2D" parent="game/JotaroPosition"]
+position = Vector2( 672.18, 511.058 )
+
+[node name="UsagiPositon" type="Node2D" parent="game"]
+
+[node name="UsagiPunchDistance" type="Position2D" parent="game/UsagiPositon"]
+position = Vector2( 185.785, 393.364 )
+
+[node name="first" type="Position2D" parent="game/UsagiPositon"]
+position = Vector2( 138.716, 303.74 )
+
+[node name="MouseFrequencyDetector" parent="game" instance=ExtResource( 63 )]
+position = Vector2( 7.17493, -167.416 )
+
+[node name="time" type="Label" parent="game"]
+margin_left = 718.0
+margin_top = 34.0
+margin_right = 917.0
+margin_bottom = 149.0
+custom_fonts/font = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="game"]
+autostart = true
+
+[node name="sublime" type="Label" parent="game"]
+margin_left = 20.0
+margin_top = 15.0
+margin_right = 991.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="game"]
 [connection signal="pressed" from="pausemenu/PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="game/Timer" to="game" method="_on_Timer_timeout"]

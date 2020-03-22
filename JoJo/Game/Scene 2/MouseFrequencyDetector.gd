@@ -1,7 +1,8 @@
 extends Node2D
+signal puncher
 
 var displacement
-var thereshold := 120
+var thereshold := 150
 
 var punches := 0
 var processedPunches := punches
@@ -18,10 +19,12 @@ func _process(delta):
 	
 	if(punches != processedPunches):
 		processedPunches = punches
+		emit_signal("puncher",TimeBetweenLastPunch)
 		TimeBetweenLastPunch = 0.0
+		
 	else:
 		TimeBetweenLastPunch += delta
-		
+	
 	print(punches)
 	print(TimeBetweenLastPunch)
 	pass
