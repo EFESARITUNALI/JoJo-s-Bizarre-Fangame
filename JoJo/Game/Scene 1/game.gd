@@ -47,6 +47,7 @@ func dialogue(label: Label, text: String) -> void:
 		yield(wait(0.05), "completed")
 
 func _ready():
+	jotaro_arrives()
 	yield(self,"mouse_click")
 	get_node("yazi").hide()
 	yazi=0
@@ -54,17 +55,11 @@ func _ready():
 	subtitle.show()
 	yield(self,"mouse_click")
 	yield(self,"mouse_click")
+	subtitle.hide()
 	dialogue(subtitle, "I'm wondering who is he...")
+	subtitle.show()
 	yield(self,"mouse_click")
 	yield(self,"mouse_click")
 	subtitle.hide()
 	usagi_arrives()
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Button_pressed():
-	jotaro_arrives()
