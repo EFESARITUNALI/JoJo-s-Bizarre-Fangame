@@ -91,7 +91,7 @@ func _process(delta):
 		tween.interpolate_property(Jotaro_Falls,"position",Jotaro_Idle.position,Jotaro_Falls.position,1,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
 		yield(tween,"tween_completed")
-		
+		get_tree().change_scene("res://Game/Scene 3/Ending.tscn")
 		
 		
 	if(timer >= 10):
