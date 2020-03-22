@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Back_Ground/5bZbbC9.png" type="Texture" id=1]
 [ext_resource path="res://Other_Sprites/pngfuel.com.png" type="Texture" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://Jotaro Walking/9.png" type="Texture" id=40]
 [ext_resource path="res://Game/Scene 1/game.gd" type="Script" id=41]
 [ext_resource path="res://Game/Scene 1/Node2D.gd" type="Script" id=42]
+[ext_resource path="res://Game/Scene 1/10_basic_message_boxes_by_CharlesGabrielcut.png" type="Texture" id=43]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://SF Fedora.ttf"
@@ -88,7 +89,7 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=8]
-size = 45
+size = 35
 font_data = ExtResource( 32 )
 
 [sub_resource type="DynamicFont" id=9]
@@ -158,6 +159,7 @@ __meta__ = {
 }
 
 [node name="pausemenu" type="Node2D" parent="."]
+visible = false
 
 [node name="Label3" type="Label" parent="pausemenu"]
 margin_left = 766.602
@@ -211,39 +213,41 @@ __meta__ = {
 }
 
 [node name="game" type="Node2D" parent="."]
-visible = false
 z_index = -1
 script = ExtResource( 41 )
 
 [node name="tumblr_on116nTDwy1s1odqho1_1280" type="Sprite" parent="game"]
 show_behind_parent = true
-position = Vector2( 511.479, 298.531 )
+position = Vector2( 511.479, 296.48 )
 scale = Vector2( 0.814291, 0.654545 )
+z_index = -1
 texture = ExtResource( 4 )
 
 [node name="Jotaro Idle" type="AnimatedSprite" parent="game"]
 visible = false
 position = Vector2( 742.544, 342.63 )
 scale = Vector2( 4.40633, 4.49821 )
+z_index = -1
 frames = SubResource( 5 )
 animation = "Jotaro Idle"
-frame = 2
+frame = 10
 playing = true
 
 [node name="Jotaro Walking" type="AnimatedSprite" parent="game"]
 position = Vector2( 1190.04, 333.53 )
 scale = Vector2( 4.40633, 4.49821 )
+z_index = -1
 frames = SubResource( 5 )
 animation = "Jotaro Walking"
-frame = 6
+frame = 3
 playing = true
 
 [node name="Usagi Walking" type="AnimatedSprite" parent="game"]
 position = Vector2( -196.116, 371.903 )
 scale = Vector2( 3.59963, 4.1482 )
+z_index = -1
 frames = SubResource( 6 )
 animation = "Usagi Walking"
-frame = 10
 speed_scale = 1.5
 playing = true
 
@@ -251,6 +255,7 @@ playing = true
 visible = false
 position = Vector2( 231.991, 383.861 )
 scale = Vector2( 3.59963, 3.65021 )
+z_index = -1
 frames = SubResource( 7 )
 animation = "Usagi Idle"
 speed_scale = 0.5
@@ -274,10 +279,10 @@ position = Vector2( 748.989, 347.514 )
 [node name="Tween" type="Tween" parent="game"]
 
 [node name="subtitle" type="Label" parent="game"]
-margin_left = 21.0
-margin_top = 512.0
-margin_right = 902.0
-margin_bottom = 604.0
+margin_left = 95.0
+margin_top = 447.0
+margin_right = 909.0
+margin_bottom = 543.0
 custom_fonts/font = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -295,6 +300,14 @@ text = "Azabu-Juban, Tokyo
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="box" type="Sprite" parent="game"]
+visible = false
+modulate = Color( 0, 0, 0, 0.694118 )
+position = Vector2( 511.703, 498.153 )
+scale = Vector2( 2.80958, 1.8501 )
+z_index = -1
+texture = ExtResource( 43 )
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 922.146
