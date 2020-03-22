@@ -41,3 +41,4 @@ func _on_Button2_pressed():
 func _on_PauseButton_pressed():
 	get_node("pausemenu").set("focus/ignore_mouse", true)
 	get_node("pausemenu").hide()
+	set_pause_node(get_node("game"),0)

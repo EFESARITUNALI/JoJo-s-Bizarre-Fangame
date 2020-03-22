@@ -3,10 +3,12 @@ extends Node2D
 onready var subtitle = get_node("subtitle")
 onready var Jotaro_Walking=get_node("Jotaro Walking")
 onready var Jotaro_Idle=get_node("Jotaro Idle")
+onready var Usagi_Walking=get_node("Usagi Walking")
+onready var Usagi_Idle=get_node("Usagi Idle")
 signal mouse_click
 
 func _input(event):
-	if(event.is_pressed()):
+	if(event.is_action("click")):
 		emit_signal("mouse_click")
 
 func jotaro_arrives()-> void:
@@ -19,6 +21,18 @@ func jotaro_arrives()-> void:
 	yield(tween,"tween_completed")
 	Jotaro_Walking.hide()
 	Jotaro_Idle.show()
+
+func usagi_arrives()-> void:
+	Usagi_Walking.position=$UsagiPos/Walking.position
+	Usagi_Idle.position=$UsagiPos/Idle.position
+	Usagi_Walking.show()
+	var tween=get_node("Tween")
+	tween.interpolate_property(Usagi_Walking,"position",Usagi_Walking.position,Usagi_Idle.position,2,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+	yield(tween,"tween_completed")
+	Usagi_Walking.hide()
+	Usagi_Idle.show()
+	Usagi_Idle.play("Usagi Idle")
 
 func wait(duration: float) -> void:
 	yield(get_tree().create_timer(duration), "timeout")
@@ -34,9 +48,16 @@ func dialogue(label: Label, text: String) -> void:
 func _ready():
 	yield(self,"mouse_click")
 	get_node("yazi").hide()
-	dialogue(subtitle, "They said I will meet a local hero here. I'm wondering who is he.")
+	dialogue(subtitle, "They said I will meet a local hero here.")
 	subtitle.show()
-
+	yield(self,"mouse_click")
+	yield(self,"mouse_click")
+	dialogue(subtitle, "I'm wondering who is he...")
+	yield(self,"mouse_click")
+	yield(self,"mouse_click")
+	subtitle.hide()
+	usagi_arrives()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
