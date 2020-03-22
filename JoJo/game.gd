@@ -34,7 +34,7 @@ func dialogue(label: Label, text: String) -> void:
 func _ready():
 	yield(self,"mouse_click")
 	get_node("yazi").hide()
-	dialogue(subtitle, "They said I will meet a local hero here. I'm wondering who is he?")
+	dialogue(subtitle, "They said I will meet a local hero here. I'm wondering who is he.")
 	subtitle.show()
 
 
