@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pngguru.com.png-a9252533a07948af27f05d043a3f6a93.stex"
+path="res://.import/pngguru.com.png-0a90131c5c407345e3340c3e685b36af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pngguru.com.png"
-dest_files=[ "res://.import/pngguru.com.png-a9252533a07948af27f05d043a3f6a93.stex" ]
+source_file="res://Other_Sprites/pngguru.com.png"
+dest_files=[ "res://.import/pngguru.com.png-0a90131c5c407345e3340c3e685b36af.stex" ]
 
 [params]
 
