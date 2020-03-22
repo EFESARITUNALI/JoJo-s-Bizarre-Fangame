@@ -104,14 +104,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 29 ), ExtResource( 45 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 46 ), ExtResource( 57 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 37 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "Jotaro Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 61 ), ExtResource( 41 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 60 ), ExtResource( 54 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "Jotaro Walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 45 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 46 ), ExtResource( 57 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "Jotaro Idle",
 "speed": 5.0
 } ]
 
@@ -233,7 +233,7 @@ position = Vector2( 1318.34, 335.455 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 8 )
 animation = "Jotaro Idle"
-frame = 1
+frame = 6
 playing = true
 
 [node name="Usagi Idle" type="AnimatedSprite" parent="game"]
@@ -248,7 +248,6 @@ position = Vector2( 1701.85, 319.18 )
 scale = Vector2( 4.40633, 4.49821 )
 frames = SubResource( 8 )
 animation = "Jotaro Walking"
-frame = 5
 playing = true
 
 [node name="Usagi Walking" type="AnimatedSprite" parent="game"]
@@ -256,7 +255,6 @@ position = Vector2( 71.7488, 388.645 )
 scale = Vector2( 3.59963, 4.1482 )
 frames = SubResource( 10 )
 animation = "Usagi Walking"
-frame = 3
 speed_scale = 1.5
 playing = true
 [connection signal="pressed" from="pausemenu/PauseButton" to="." method="_on_PauseButton_pressed"]
